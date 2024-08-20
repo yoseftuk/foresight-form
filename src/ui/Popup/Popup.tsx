@@ -25,12 +25,14 @@ function Popup({children, content, isOpen, isFitWidth, onClose}: PopupProps) {
     const anchor = anchorRef.current;
     if (!isOpen || !anchor) return;
     window.addEventListener('scroll', updatePopupPosition);
+    window.addEventListener('resize', updatePopupPosition);
     const observer = new ResizeObserver(updatePopupPosition);
     observer.observe(anchor);
 
     return () => {
       observer.disconnect();
       window.removeEventListener('scroll', updatePopupPosition);
+      window.removeEventListener('resize', updatePopupPosition);
     };
   }, [isOpen, updatePopupPosition]);
 
