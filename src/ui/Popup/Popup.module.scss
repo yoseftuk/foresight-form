@@ -1,0 +1,12 @@
+@import 'styles';
+
+.popup {
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  border: 1px solid $color-border;
+  position: fixed;
+  margin-top: $sp-2;
+  padding: $sp-3;
+  z-index: 1001;
+}

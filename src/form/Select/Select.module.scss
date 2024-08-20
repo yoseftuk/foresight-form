@@ -1,0 +1,34 @@
+@import 'styles';
+
+.trigger {
+  width: 100%;
+  border: 1px solid $color-border;
+  border-radius: $border-radius;
+  padding: $sp-2 $sp-3;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+
+  .placeholder {
+    color: $color-placeholder;
+  }
+
+  .value {
+    display: flex;
+    gap: $sp-3 $sp-2;
+    white-space: nowrap;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    border-radius: $border-radius;
+    background-color: $color-lite-hover;
+    border: 1px solid $color-border;
+    padding: $sp-1 $sp-2;
+    margin: -$sp-1 0;
+    font-size: $text-small;
+  }
+}

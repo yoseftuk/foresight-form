@@ -1,0 +1,24 @@
+@import 'styles';
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: url('assets/images/bg-img.jpg') repeat;
+  background-size: 300px;
+  @extend %flex-center;
+
+  .content {
+    width: 540px;
+    background: white;
+    border-radius: $border-radius;
+    padding: $sp-4;
+    box-shadow: $box-shadow;
+  }
+
+  .title {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: $text-title;
+    color: $color-primary;
+  }
+}

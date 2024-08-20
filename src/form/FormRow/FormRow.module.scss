@@ -1,0 +1,11 @@
+@import 'styles';
+
+.row {
+  width: 100%;
+  display: flex;
+  gap: $sp-4;
+
+  @media all and (max-width: 320px) {
+    flex-direction: column;
+  }
+}

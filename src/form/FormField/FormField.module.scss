@@ -1,0 +1,16 @@
+@import "styles";
+
+.container {
+  position: relative;
+  width: 100%;
+
+  .label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: $sp-2;
+  }
+
+  .error {
+
+  }
+}

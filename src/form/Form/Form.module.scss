@@ -1,0 +1,32 @@
+@import 'styles';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-4;
+}
+
+.submit {
+  background: $color-primary;
+  color: white;
+  font-family: $font-title;
+  cursor: pointer;
+  border-radius: $border-radius;
+  width: fit-content;
+  align-self: flex-end;
+  font-weight: normal;
+  padding: $sp-2 $sp-3;
+  letter-spacing: .8px;
+  border: none;
+  transition: all .3s ease;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+
+  &.disabled {
+    opacity: .5;
+    pointer-events: none;
+    touch-action: none;
+  }
+}

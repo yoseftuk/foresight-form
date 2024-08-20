@@ -1,0 +1,22 @@
+@import 'styles';
+
+@font-face {
+  font-family: "moomin";
+  src: url("assets/fonts/moominfont-webfont.woff") format("woff");
+}
+
+body {
+  margin: 0;
+  font-family: $font-regular;
+  font-size: $text-regular;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2 {
+  font-family: $font-title;
+}
+
+* {
+  box-sizing: border-box;
+}
