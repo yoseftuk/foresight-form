@@ -4,8 +4,9 @@
   width: 100%;
   border: 1px solid $color-border;
   border-radius: $border-radius;
-  padding: $sp-2 $sp-3;
+  padding: $sp-2 24px $sp-2 $sp-3;
   cursor: pointer;
+  position: relative;
 
   &:focus {
     outline: none;
@@ -18,7 +19,7 @@
 
   .value {
     display: flex;
-    gap: $sp-3 $sp-2;
+    gap: $sp-2 $sp-3;
     white-space: nowrap;
     flex-wrap: wrap;
   }
@@ -30,5 +31,21 @@
     padding: $sp-1 $sp-2;
     margin: -$sp-1 0;
     font-size: $text-small;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: $sp-2;
+    width: 14px;
+    height: 14px;
+    margin: auto;
+    transform: rotate(90deg);
+    transition: transform .3s ease;
+
+    &.open {
+      transform: rotate(-90deg);
+    }
   }
 }

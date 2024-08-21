@@ -72,7 +72,12 @@ function Select<Value extends string | number>(props: SelectProps<Value>) {
         isOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}
       >
-        <SelectControl value={value} placeholder={placeholder} setIsMenuOpen={setIsMenuOpen} />
+        <SelectControl
+          value={value}
+          placeholder={placeholder}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
       </Popup>
     </FormField>
   );

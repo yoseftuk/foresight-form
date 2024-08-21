@@ -1,17 +1,21 @@
 import React, {Dispatch, KeyboardEvent, SetStateAction} from 'react';
 import styles from './Select.module.scss';
+import {ReactComponent as ArrowIcon} from 'assets/icons/caret-arrow.svg';
+import classNames from '../../utils/classNames';
 
 type OneOrMulti<G> = G | G[];
 
 interface SelectControlProps {
   value?: OneOrMulti<string | number>;
   placeholder?: string;
+  isMenuOpen: boolean;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 function SelectControl({
   value,
   placeholder = 'Please Select...',
+  isMenuOpen,
   setIsMenuOpen,
 }: SelectControlProps) {
   const toggleMenu = () => setIsMenuOpen((isOpen) => !isOpen);
@@ -37,6 +41,7 @@ function SelectControl({
       ) : (
         <div className={styles.value}>{controlLabel}</div>
       )}
+      <ArrowIcon className={classNames(styles.arrow, isMenuOpen && styles.open)} />
     </div>
   );
 }

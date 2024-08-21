@@ -2,10 +2,12 @@
 
 .input {
   display: block;
-  width: 100%;
+  width: 100px;
+  min-width: 100%;
   padding: $sp-2 $sp-3;
   border-radius: $border-radius;
   border: 1px solid $color-border;
+  font-size: $text-regular;
 
   &:focus {
     outline: none;
