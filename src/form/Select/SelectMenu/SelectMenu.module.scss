@@ -25,6 +25,7 @@
     cursor: pointer;
     display: flex;
     gap: $sp-3;
+    user-select: none;
 
     &:hover, &.active {
       background: $color-lite-hover;
