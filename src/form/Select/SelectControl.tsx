@@ -1,7 +1,8 @@
-import React, {Dispatch, KeyboardEvent, SetStateAction} from 'react';
+import React, {Dispatch, KeyboardEvent, SetStateAction, useMemo} from 'react';
 import styles from './Select.module.scss';
 import {ReactComponent as ArrowIcon} from 'assets/icons/caret-arrow.svg';
 import classNames from '../../utils/classNames';
+import {SelectOption} from './Select.types';
 
 type OneOrMulti<G> = G | G[];
 
@@ -10,6 +11,7 @@ interface SelectControlProps {
   placeholder?: string;
   isMenuOpen: boolean;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+  options: SelectOption<string | number>[];
 }
 
 function SelectControl({
@@ -17,6 +19,7 @@ function SelectControl({
   placeholder = 'Please Select...',
   isMenuOpen,
   setIsMenuOpen,
+  options,
 }: SelectControlProps) {
   const toggleMenu = () => setIsMenuOpen((isOpen) => !isOpen);
 
@@ -26,13 +29,17 @@ function SelectControl({
 
   const isEmpty = Array.isArray(value) ? !value.length : !value;
 
-  const controlLabel = Array.isArray(value)
-    ? value.map((tag) => (
-        <div className={styles.tag} key={tag}>
-          {tag}
-        </div>
-      ))
-    : value;
+  const controlLabel = useMemo(
+    () =>
+      Array.isArray(value)
+        ? value.map((tag) => (
+            <div className={styles.tag} key={tag}>
+              {options.find((opt) => opt.value === tag)?.label}
+            </div>
+          ))
+        : options.find((opt) => opt.value === value)?.label,
+    [options, value],
+  );
 
   return (
     <div tabIndex={1} className={styles.trigger} onClick={toggleMenu} onKeyDown={handleKeyDown}>
