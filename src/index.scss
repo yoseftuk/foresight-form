@@ -19,4 +19,19 @@ h1, h2 {
 
 * {
   box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: $border-radius;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: $border-radius;
+  }
 }
