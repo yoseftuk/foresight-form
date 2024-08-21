@@ -20,7 +20,7 @@ function MultiSelectListOptions<Value extends string | number>({
   );
 
   return (
-    <ul className={styles.options}>
+    <ul className={styles.options} data-testid={'multi-select-menu'}>
       <li
         className={classNames(styles.option, isAllSelected && styles.active)}
         onClick={() =>

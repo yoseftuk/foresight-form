@@ -15,12 +15,14 @@ function SingleSelectListOptions<Value extends string | number>({
   onChange,
 }: SingleSelectListOptionsProps<Value>) {
   return (
-    <ul className={styles.options}>
+    <ul className={styles.options} data-testid={'single-select-menu'}>
       {options.map(({label, value}) => (
         <li
           key={value}
           className={classNames(styles.option, value === currentValue && styles.active)}
-          onClick={() => onChange(value)}
+          onClick={() => {
+            onChange(value);
+          }}
         >
           {label}
         </li>

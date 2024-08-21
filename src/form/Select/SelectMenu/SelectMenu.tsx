@@ -17,7 +17,7 @@ function SelectMenu<Value extends string | number>({options, children}: SelectMe
 
   return (
     <>
-      <div className={styles.menu}>
+      <div className={styles.menu} data-testid={'select-menu'}>
         <InputUI value={searchInput} onChange={setSearchInput} placeholder={'Search..'} />
         {children(filteredOptions)}
       </div>

@@ -77,6 +77,7 @@ function Select<Value extends string | number>(props: SelectProps<Value>) {
           placeholder={placeholder}
           isMenuOpen={isMenuOpen}
           setIsMenuOpen={setIsMenuOpen}
+          options={options}
         />
       </Popup>
     </FormField>
