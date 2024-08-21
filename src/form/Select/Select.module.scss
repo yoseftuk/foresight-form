@@ -44,6 +44,10 @@
     transform: rotate(90deg);
     transition: transform .3s ease;
 
+    path {
+      fill: $color-border;
+    }
+
     &.open {
       transform: rotate(-90deg);
     }
